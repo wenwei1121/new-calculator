@@ -1,0 +1,64 @@
+:root {
+  /* 顏色 */
+  --bg-clr: hsla(0, 0%, 15%, 1);
+  --fn-clr: hsla(0, 0%, 85%, 1);
+  --input-clr: hsla(0, 0%, 25%, 1);
+  --btn-clr: hsla(180, 100%, 35%, 1);
+
+  /* 字大小 */
+  --fn-size: 2.5rem;
+
+  /* 字距 */
+  --ltr-space: 1px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-size: calc(var(--fn-size) / 2.5);
+  letter-spacing: var(--ltr-space);
+  color: var(--fn-clr);
+}
+
+body {
+  min-block-size: 100vh;
+  background-color: var(--bg-clr);
+}
+
+.container {
+  min-block-size: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2.5rem;
+}
+
+/* 歡迎使用計算機標題樣式 */
+h1 {
+  font-size: var(--fn-size);
+  letter-spacing: calc(var(--ltr-space) * 2);
+}
+
+/* 輸入姓名格樣式 */
+[name = "name"] {
+  padding-inline: 8px;
+  padding-block: 6px;
+  margin-block: 12px;
+  font-size: calc(var(--fn-size) / 2);
+  background-color: var(--input-clr);
+  outline-offset: 1px;
+  border: 1px solid var(--bg-clr);
+  border-radius: 3px;
+}
+
+/* 開始使用按鈕樣式 */
+[type = "submit"] {
+  cursor: pointer;
+  padding-inline: 8px;
+  padding-block: 6px;
+  background-color: var(--btn-clr);
+  border: 1px solid var(--btn-clr);
+  border-radius: 3px;
+}

@@ -1,0 +1,163 @@
+:root {
+  /* web bg color */
+  --bg-clr: hsla(0, 0%, 10%, 1);
+
+  /* calculator bg color */
+  --cal-clr: hsla(0, 0%, 20%, 1);
+
+  /* btn color */
+  --btn-clr: hsla(180, 100%, 40%, 1);
+  --btn-ope-clr: hsla(45, 100%, 45%, 1);
+  --btn-num-clr: hsla(0, 0%, 50%, 1);
+  
+  /* btn:hover-color */
+  --btn-hvr-clr: hsla(180, 100%, 70%, 0.8);
+  --btn-ope-hvr-clr: hsla(45, 100%, 70%, 1);
+  --btn-num-hvr-clr: hsla(0, 0%, 70%, 1);
+
+  /* font-color */
+  --fn-clr: hsla(0, 0%, 85%, 1);
+
+  /* font-size */
+  --fn-sz: 1.3rem;
+
+  /* border-radius */
+  --bdr-rds: 5px;
+
+  /* space */
+  --p: 15px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-size: var(--fn-sz);
+  color: var(--fn-clr);
+  border-radius: var(--bdr-rds);
+}
+
+body {
+  min-block-size: 100vh;
+  background-color: var(--bg-clr);
+}
+
+.container {
+  min-block-size: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: var(--p);
+}
+
+/*** user styles ***/
+.user .user-name {
+  font-size: calc(var(--fn-sz) * 1.5);
+  letter-spacing: 0.3rem;
+}
+/*** user styles ***/
+
+/*** calculator styles ***/
+.container .calculator {
+  inline-size: 360px;
+  block-size: 480px;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: var(--p);
+  background-color: var(--cal-clr);
+}
+
+/* calculator-header styles */
+.container .calculator .calculator-header {
+  block-size: 20%;
+  padding-inline: calc(var(--p) / 3 * 2);
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  background-color: var(--bg-clr);
+}
+
+/** calculator showplace styles **/
+.container .calculator .calculator-header .showPlace {
+  font-size: calc(var(--fn-sz) * 2);
+  overflow: overlay;
+}
+
+/* showPlace scrollbar styles */
+.showPlace::-webkit-scrollbar {
+  block-size: 0px;
+}
+
+.showPlace:hover::-webkit-scrollbar {
+  block-size: 5px;
+}
+
+.showPlace::-webkit-scrollbar-thumb {
+  border-radius: var(--bdr-rds);
+}
+
+.showPlace:hover::-webkit-scrollbar-thumb {
+  background-color: hsla(180, 100%, 40%, 0.3);
+}
+
+.showPlace::-webkit-scrollbar-thumb:hover {
+  background-color: hsla(180, 100%, 40%, 1);
+}
+/** calculator showplace styles **/
+
+/* calculator-body styles */
+.container .calculator .calculator-body {
+  block-size: calc(85% - 15px);
+}
+
+/* all btn container styles */
+.keys {
+  min-block-size: 100%;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+  gap: var(--p);
+}
+/*** calculator styles styles ***/
+
+/*** btn styles ***/
+.btn {
+  cursor: pointer;
+  border: none;
+  background-color: var(--btn-clr);
+}
+
+.operator {
+  background-color: var(--btn-ope-clr);
+}
+
+.number {
+  background-color: var(--btn-num-clr);
+}
+
+/** btn:hover styles **/
+.btn:hover{
+  background-color: var(--btn-hvr-clr);
+}
+
+.operator:hover {
+  background-color: var(--btn-ope-hvr-clr);
+}
+
+.number:hover {
+  background-color: var(--btn-num-hvr-clr);
+}
+/** btn:hover styles **/
+
+.zero {
+  grid-area: 5 / 1 / span 1 / span 2 ;
+}
+
+/* operator ani btn active style */
+.active {
+  background-color: var(--fn-clr);
+  color: var(--btn-ope-clr);
+}
+/*** btn styles ***/
